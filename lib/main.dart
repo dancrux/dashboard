@@ -15,7 +15,6 @@ class Dashboard extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       bottomNavigationBar: Container(
-
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(30), topLeft: Radius.circular(30),
@@ -154,9 +153,9 @@ class Dashboard extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 76.0, right: 32.0,),
-                      width: 306.0,
-                      height: 299.0,
+                      margin: EdgeInsets.only(left: 76.0, right: 32.0, top: 21.0),
+                      width:  306.0,
+                      height:  299.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(35),
                         image: DecorationImage(
@@ -166,17 +165,19 @@ class Dashboard extends StatelessWidget {
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 32.0, right: 47.0,bottom: 12.0),
-                      width: 335.0,
-                      height: 335.0,
+                      width:  335.0,
+                      height:  335.0,
+
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(35),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/center_picture.png')
+                          image: AssetImage('assets/images/bottom_rectangle.png')
                         )
                       ),
+                      child: Image.asset('assets/images/center_picture.png'),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 259.0,  top: 24.21, right: 19.0),
+                      margin: EdgeInsets.only(left: 244.96,  top: 24.21, right: 19.0),
                       alignment: Alignment.center,
                       width: 70.68,
                       height: 32.92,
@@ -238,39 +239,80 @@ class Dashboard extends StatelessWidget {
   Container _myStoryImage() {
     return Container(
 
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(right: 6.0),
-                      width: 73.0,
-                      height: 72.0,
-                      alignment: Alignment.topRight,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        border: Border.all(
-                            color:  Color(0xFFEC5873),
-                            width: 1.2
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 6.0),
+                        width: 73.0,
+                        height: 72.0,
+                        alignment: Alignment.topRight,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                              color:  Color(0xFFEC5873),
+                              width: 1.2
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/second_story.png'),
+                              fit: BoxFit.fill
+                          ),
                         ),
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'assets/images/second_story.png'),
-                            fit: BoxFit.fill
-                        ),
+                      child: Image(image: AssetImage(
+                        'assets/images/plus_icon.png'
                       ),
-                    child: Image(image: AssetImage(
-                      'assets/images/plus_icon.png'
+                        width: 20.0,
+                        height: 20.0,
+
+                      )
+
                     ),
-                      width: 20.0,
-                      height: 20.0,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 6.0),
+                      child: Container(
+                          width: 73.0,
+                          height: 72.0,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                            border: Border.all(
+                                color:  Color(0xFFEC5873),
+                                width: 1.2
+                            ),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/profile_image.png'),
+                                fit: BoxFit.fill
+                            ),
+                          )
 
-                    )
+                      ),
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(right: 6.0),
+                        width: 69.0,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                              color:  Color(0xFFEC5873),
+                              width: 1.2
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/third_story.png'),
+                              fit: BoxFit.fill
+                          ),
+                        )
 
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 6.0),
-                    child: Container(
+                    ),
+                    Container(
+                        margin: EdgeInsets.only(right: 1.0),
                         width: 73.0,
                         height: 72.0,
                         decoration: BoxDecoration(
@@ -282,52 +324,33 @@ class Dashboard extends StatelessWidget {
                           ),
                           image: DecorationImage(
                               image: AssetImage(
-                                  'assets/images/profile_image.png'),
+                                  'assets/images/third_story.png'),
                               fit: BoxFit.fill
                           ),
                         )
 
                     ),
-                  ),
-                  Container(
-                      margin: EdgeInsets.only(right: 6.0),
-                      width: 69.0,
-                      height: 72.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        border: Border.all(
-                            color:  Color(0xFFEC5873),
-                            width: 1.2
-                        ),
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'assets/images/third_story.png'),
-                            fit: BoxFit.fill
-                        ),
-                      )
+                    Container(
+                        margin: EdgeInsets.only(right: 1.0),
+                        width: 73.0,
+                        height: 72.0,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                          border: Border.all(
+                              color:  Color(0xFFEC5873),
+                              width: 1.2
+                          ),
+                          image: DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/third_story.png'),
+                              fit: BoxFit.fill
+                          ),
+                        )
 
-                  ),
-                  Container(
-                      margin: EdgeInsets.only(right: 1.0),
-                      width: 73.0,
-                      height: 72.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                        border: Border.all(
-                            color:  Color(0xFFEC5873),
-                            width: 1.2
-                        ),
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'assets/images/third_story.png'),
-                            fit: BoxFit.fill
-                        ),
-                      )
-
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
     );
   }
